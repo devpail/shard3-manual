@@ -57,7 +57,6 @@ public class BussinessController {
     public String createUser() {
         for (int i = 1; i < 10; i++) {
             User user = new User();
-            user.setUserId(snowflakeIdGenerator.nextId());
             user.setName("王大莉" + i);
             user.setGender(GenderEnum.FEMALE.getCode());
             user.setAge(20 + i);
@@ -93,7 +92,6 @@ public class BussinessController {
             user.setIdNumber("4101231989691" + i);
 
             UserAddress address = new UserAddress();
-            address.setAddressId(snowflakeIdGenerator.nextId());
             address.setCity("某某市");
             address.setDetail("某某街道");
             address.setDistrict("某某区");
@@ -129,7 +127,6 @@ public class BussinessController {
             user.setIdNumber("1101231989691" + i);
 
             UserAddress address = new UserAddress();
-            address.setAddressId(snowflakeIdGenerator.nextId());
             address.setCity("某某市");
             address.setDetail("某某街道");
             address.setDistrict("某某区");
@@ -145,7 +142,6 @@ public class BussinessController {
             order.setRemark("测试");
 
             OrderItem orderItem = new OrderItem();
-            orderItem.setOrderItemId(snowflakeIdGenerator.nextId());
             orderItem.setItemPrice(new BigDecimal(5));
             orderItem.setOrderTime(DateUtil.parse("2019-06-27 17:50:05"));
             orderItem.setProductId(593860924259958784L);

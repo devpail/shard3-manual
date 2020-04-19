@@ -1,5 +1,6 @@
 package com.hyc.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.util.Date;
@@ -10,6 +11,7 @@ import java.util.Date;
  * @create: 2020-04-18 20:41
  **/
 @Data
+@TableName("t_user")
 public class User {
     private Long userId;
     private String idNumber;

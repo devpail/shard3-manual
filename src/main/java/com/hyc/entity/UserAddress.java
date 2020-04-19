@@ -1,5 +1,6 @@
 package com.hyc.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
@@ -8,6 +9,7 @@ import lombok.Data;
  * @create: 2020-04-18 20:45
  **/
 @Data
+@TableName("t_user_address")
 public class UserAddress {
     private Long addressId;
     private Long userId;

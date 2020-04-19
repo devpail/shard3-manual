@@ -1,5 +1,6 @@
 package com.hyc.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -10,6 +11,7 @@ import java.math.BigDecimal;
  * @create: 2020-04-18 20:44
  **/
 @Data
+@TableName("t_order")
 public class Order {
     private Long orderId;
     private String orderNo;

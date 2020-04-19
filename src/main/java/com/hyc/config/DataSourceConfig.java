@@ -4,6 +4,7 @@ import com.alibaba.druid.filter.Filter;
 import com.alibaba.druid.filter.stat.StatFilter;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
+import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import com.google.common.collect.Lists;
 import com.hyc.dbstrategy.GenderShardingAlgorithm;
 import com.hyc.dbstrategy.IdShardingAlgorithm;
@@ -168,9 +169,8 @@ public class DataSourceConfig {
     @Bean("sqlSessionFactory")
     @Primary
     public SqlSessionFactory sqlSessionFactory(@Qualifier("dataSource") DataSource dataSource) throws Exception {
-        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+        MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();
         bean.setDataSource(dataSource);
-        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*.xml"));
         return bean.getObject();
     }
 
